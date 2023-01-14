@@ -19,7 +19,6 @@
 			<artifactId>json-simple</artifactId>
 			<version>${json.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>

@@ -24,7 +24,7 @@
     <tr>
       <td><b>TestNG</b></td>
       <td><b>7.4.0</b></td>
-      <td><b>The Test Runner to execute suite</b></td>
+      <td><b>Test Runner to execute suite</b></td>
     </tr>
     <tr>
       <td><b>Google JSON</b></td>

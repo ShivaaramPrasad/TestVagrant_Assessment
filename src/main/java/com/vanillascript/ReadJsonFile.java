@@ -15,8 +15,8 @@ public class ReadJsonFile {
 		int foreignPlayerCount = 0;
 		JSONParser jsonparser = new JSONParser();
 		try {
-			FileReader reader = new FileReader("./src/test/resources/testdata/TeamRCB.json");
-			Object obj=jsonparser.parse(reader);
+			FileReader fileReader = new FileReader("./src/test/resources/testdata/TeamRCB.json");
+			Object obj=jsonparser.parse(fileReader);
 			JSONObject jsonObject = (JSONObject)obj;
 			String teamName = (String)jsonObject.get("name");
 			String location = (String)jsonObject.get("location");
@@ -49,8 +49,6 @@ public class ReadJsonFile {
 			{
 				System.out.println("Number of Wicket Keeper is not matching and its: "+wicketKeeperCount);
 			}
-
-
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
