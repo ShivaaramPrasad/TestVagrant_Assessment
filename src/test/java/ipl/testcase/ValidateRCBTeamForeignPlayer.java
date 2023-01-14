@@ -17,8 +17,8 @@ public class ValidateRCBTeamForeignPlayer extends IPLJsonServiceImpl {
 	
 	@Test
 	@Parameters("fpCount")
-	public void testNoOfForeignPlayers(@Optional("4")int fpCount){
+	public void testNoOfForeignPlayersInRCB(@Optional("4")int fpCount){
 		Assert.assertTrue(checkForeignPlayers(fpCount));	
 	}
-	
+		
 }

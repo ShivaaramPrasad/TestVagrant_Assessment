@@ -68,10 +68,10 @@ public class IPLJsonServiceImpl implements IPLJsonService  {
 					if(playersRole.equals("Wicket-keeper")) iplWicketKeeperCount++;			
 				}
 				if(iplWicketKeeperCount==wicketKeeperCount) {
-					System.out.println("Number of Wicket Keeper: "+wicketKeeperCount);
+					System.out.println("Number of Wicket Keeper: "+iplWicketKeeperCount);
 					return true;
 				}else {
-					System.out.println("Number of Wicket Keeper is not matching and its: "+wicketKeeperCount);
+					System.out.println("Number of Wicket Keeper is not matching and its: "+iplWicketKeeperCount);
 				}
 			}else {
 				System.out.println("Unable to fetch data from input json file");
@@ -80,7 +80,6 @@ public class IPLJsonServiceImpl implements IPLJsonService  {
 			System.out.println("Exception Message : "+e);
 		}
 		return false;
-
 	}		
 	
 

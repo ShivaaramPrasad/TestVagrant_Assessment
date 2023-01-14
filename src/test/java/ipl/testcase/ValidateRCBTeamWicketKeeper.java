@@ -17,8 +17,7 @@ public class ValidateRCBTeamWicketKeeper extends IPLJsonServiceImpl {
 	
 	@Test
 	@Parameters("wkCount")
-	public void testNoOfWicketKeeper(@Optional("1")int wkCount)
-	{
+	public void testNoOfWicketKeeperInRCB(@Optional("1")int wkCount){
 		Assert.assertTrue(checkWicketKeeperPlayers(wkCount));
 	}
 		
