@@ -27,7 +27,7 @@
       <td><b>Test Runner to execute suite</b></td>
     </tr>
     <tr>
-      <td><b>Google JSON</b></td>
+      <td><b>JSON Simple</b></td>
       <td><b>1.1.1</b></td>
       <td><b>Create & Parse JSON Files for API</b></td>
     </tr>
