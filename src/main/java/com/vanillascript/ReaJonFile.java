@@ -30,10 +30,10 @@ public class ReaJonFile {
 				String playersCountry = (String)player.get("country");
 				String playersRole = (String)player.get("role");
 				String playersPrice = (String)player.get("price-in-crores");
-				System.out.println("Player Name: "+playersName);
-				System.out.println("Player Country: "+playersCountry);
-				System.out.println("Player Role: "+playersRole);
-				System.out.println("Player Price: "+playersPrice);
+				System.out.println(i+1+" Player Name: "+playersName);
+				System.out.println("   Player Country: "+playersCountry);
+				System.out.println("   Player Role: "+playersRole);
+				System.out.println("   Player Price: "+playersPrice);
 				if(!playersCountry.equals("India")) foreignPlayerCount++;
 				if(playersRole.equals("Wicket-keeper")) wicketKeeperCount++;
 			}	
