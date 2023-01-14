@@ -21,28 +21,61 @@ public class IPLJsonServiceImpl implements IPLJsonService  {
 			FileReader fileReader = new FileReader("./src/test/resources/testdata/"+fileName+".json");
 			Object object = jsonparser.parse(fileReader);
 			iplTeamObject = (JSONObject) object;
-		} catch(ParseException e)
-		{
+		} catch(ParseException e){
 			System.out.println("Unable to Parse : "+e);
-		} catch(IOException e)
-		{
+		} catch(IOException e){
 			System.out.println("File not found ! "+e);
-		} catch(Exception e)
-		{
+		} catch(Exception e){
 			System.out.println("Exception Message : "+e);
 		}
 	}
 
 	public void checkForeignPlayers(int foreignCount) {
-		// TODO Auto-generated method stub
-		
+		try
+		{
+			if(iplTeamObject!=null) {
+				JSONArray playerArr = (JSONArray) iplTeamObject.get("player");
+				for(int i=0;i<playerArr.size();i++) { 
+					JSONObject player=(JSONObject)playerArr.get(i);
+					String playersCountry = (String)player.get("country");
+					if(!playersCountry.equals("India")) iplForeignPlayerCount++;
+				}
+				if(iplForeignPlayerCount==foreignCount) {
+					System.out.println("Number of Foreign Player: "+iplForeignPlayerCount);
+				}else {
+					System.out.println("Number of Foreign Player is not matching and its: "+iplForeignPlayerCount);
+				}
+			}else{
+				System.out.println("Unable to fetch data from input json file");
+			}
+		} catch(Exception e){
+			System.out.println("Exception Message : "+e);
+		}	
 	}
 
 	public void checkWicketKeeperPlayers(int wicketKeeperCount) {
-		// TODO Auto-generated method stub
-		
-	}
-	
+		try
+		{
+			if(iplTeamObject!=null) {
+				JSONArray playerArr = (JSONArray) iplTeamObject.get("player");
+				for(int i=0;i<playerArr.size();i++) { 
+					JSONObject player=(JSONObject)playerArr.get(i);
+					String playersRole=(String)player.get("role");
+					if(playersRole.equals("Wicket-keeper")) iplWicketKeeperCount++;			
+				}
+				if(iplWicketKeeperCount==wicketKeeperCount) {
+					System.out.println("Number of Wicket Keeper: "+wicketKeeperCount);
+				}else {
+					System.out.println("Number of Wicket Keeper is not matching and its: "+wicketKeeperCount);
+				}
+			}else {
+				System.out.println("Unable to fetch data from input json file");
+			}
+		} catch(Exception e){
+			System.out.println("Exception Message : "+e);
+		}
+
+	}		
 	
 
 }
