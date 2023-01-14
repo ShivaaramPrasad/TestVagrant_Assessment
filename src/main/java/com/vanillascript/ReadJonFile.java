@@ -8,7 +8,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-public class ReaJonFile {
+public class ReadJonFile {
 
 	public static void main(String[] args) {
 		int wicketKeeperCount=0;
