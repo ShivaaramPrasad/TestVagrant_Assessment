@@ -37,8 +37,19 @@ public class ReadJsonFile {
 				if(!playersCountry.equals("India")) foreignPlayerCount++;
 				if(playersRole.equals("Wicket-keeper")) wicketKeeperCount++;
 			}	
-			System.out.println("Number of Foreign Player: "+foreignPlayerCount);
-			System.out.println("Number of Wicket Keeper: "+wicketKeeperCount);
+			if(foreignPlayerCount==4) {
+				System.out.println("Number of Foreign Player: "+foreignPlayerCount);
+			}else 
+			{
+				System.out.println("Number of Foreign Player is not matching and its: "+foreignPlayerCount);
+			}
+			if(wicketKeeperCount==1) {
+				System.out.println("Number of Wicket Keeper: "+wicketKeeperCount);
+			}else 
+			{
+				System.out.println("Number of Wicket Keeper is not matching and its: "+wicketKeeperCount);
+			}
+
 
 		} catch(Exception e) {
 			e.printStackTrace();
