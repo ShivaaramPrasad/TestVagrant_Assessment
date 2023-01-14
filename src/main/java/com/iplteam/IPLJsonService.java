@@ -15,14 +15,15 @@ public interface IPLJsonService {
 	
 	/**
 	 * This method used to check how many foreign player in a team 
-	 * @param foreignCount - helps to check the condition number of foreign player
+	 * @param foreignCount - helps to check the condition number of foreign player in a team
 	 * @author Shivaaram
 	 */
-	public void checkForeignPlayers(int foreignCount);
+	public boolean checkForeignPlayers(int foreignCount);
+	
 	/**
 	 * This method used to check how many wicket keeper in a team 
-	 * @param foreignCount - helps to check the condition number of wicket keeper
+	 * @param foreignCount - helps to check the condition number of wicket keeper in a team
 	 * @author Shivaaram
 	 */
-	public void checkWicketKeeperPlayers(int wicketKeeperCount);
+	public boolean checkWicketKeeperPlayers(int wicketKeeperCount);
 }

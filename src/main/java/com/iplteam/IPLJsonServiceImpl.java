@@ -3,6 +3,8 @@ package com.iplteam;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -30,7 +32,7 @@ public class IPLJsonServiceImpl implements IPLJsonService  {
 		}
 	}
 
-	public void checkForeignPlayers(int foreignCount) {
+	public boolean checkForeignPlayers(int foreignCount) {
 		try
 		{
 			if(iplTeamObject!=null) {
@@ -42,6 +44,7 @@ public class IPLJsonServiceImpl implements IPLJsonService  {
 				}
 				if(iplForeignPlayerCount==foreignCount) {
 					System.out.println("Number of Foreign Player: "+iplForeignPlayerCount);
+					return true;
 				}else {
 					System.out.println("Number of Foreign Player is not matching and its: "+iplForeignPlayerCount);
 				}
@@ -50,10 +53,11 @@ public class IPLJsonServiceImpl implements IPLJsonService  {
 			}
 		} catch(Exception e){
 			System.out.println("Exception Message : "+e);
-		}	
+		}
+		return false;	
 	}
 
-	public void checkWicketKeeperPlayers(int wicketKeeperCount) {
+	public boolean checkWicketKeeperPlayers(int wicketKeeperCount) {
 		try
 		{
 			if(iplTeamObject!=null) {
@@ -65,6 +69,7 @@ public class IPLJsonServiceImpl implements IPLJsonService  {
 				}
 				if(iplWicketKeeperCount==wicketKeeperCount) {
 					System.out.println("Number of Wicket Keeper: "+wicketKeeperCount);
+					return true;
 				}else {
 					System.out.println("Number of Wicket Keeper is not matching and its: "+wicketKeeperCount);
 				}
@@ -74,6 +79,7 @@ public class IPLJsonServiceImpl implements IPLJsonService  {
 		} catch(Exception e){
 			System.out.println("Exception Message : "+e);
 		}
+		return false;
 
 	}		
 	
