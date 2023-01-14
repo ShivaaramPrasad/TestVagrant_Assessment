@@ -13,9 +13,9 @@ import org.json.simple.parser.ParseException;
 
 public class IPLJsonServiceImpl implements IPLJsonService  {
 
-	public static JSONObject iplTeamObject;
-	protected static int iplWicketKeeperCount;
-	protected static int iplForeignPlayerCount;
+	public  JSONObject iplTeamObject;
+	protected int iplWicketKeeperCount;
+	protected int iplForeignPlayerCount;
 
 	public void readJsonFile(String fileName) {
 		try {
