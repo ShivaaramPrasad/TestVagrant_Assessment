@@ -8,16 +8,22 @@ import org.testng.annotations.Test;
 
 import com.iplteam.IPLJsonServiceImpl;
 
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+
 public class ValidateRCBTeamForeignPlayer extends IPLJsonServiceImpl {
 	
 	@BeforeTest
-	public void preSetUp() {
-		readJsonFile("TeamRCB");
+	@Parameters("fileName")
+	public void preSetUp(@Optional("TeamRCB") String fileName) {
+		System.out.println("Read the Json File");
+		readJsonFile(fileName);
 	}
 	
 	@Test
 	@Parameters("fpCount")
-	public void testNoOfForeignPlayersInRCB(@Optional("4")int fpCount){
+	public void testNoOfForeignPlayersInATeam(@Optional("4")int fpCount){
+		System.out.println("Check Postive Testcase for Foreign Players");
 		Assert.assertTrue(checkForeignPlayers(fpCount));	
 	}
 		

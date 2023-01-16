@@ -11,12 +11,15 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+
 public class IPLJsonServiceImpl implements IPLJsonService  {
 
 	public  JSONObject iplTeamObject;
 	protected int iplWicketKeeperCount;
 	protected int iplForeignPlayerCount;
-
+	
 	public void readJsonFile(String fileName) {
 		try {
 			JSONParser jsonparser = new JSONParser();
@@ -31,19 +34,19 @@ public class IPLJsonServiceImpl implements IPLJsonService  {
 			System.out.println("Exception Message : "+e);
 		}
 	}
-
+	
 	public boolean checkForeignPlayers(int foreignCount) {
 		try
 		{
 			if(iplTeamObject!=null) {
 				JSONArray playerArr = (JSONArray) iplTeamObject.get("player");
 				for(int i=0;i<playerArr.size();i++) { 
-					JSONObject player=(JSONObject)playerArr.get(i);
-					String playersCountry = (String)player.get("country");
-					if(!playersCountry.equals("India")) iplForeignPlayerCount++;
+					JSONObject iplPlayers=(JSONObject)playerArr.get(i);
+					String iplPlayersCountry = (String)iplPlayers.get("country");
+					if(!iplPlayersCountry.equals("India")) iplForeignPlayerCount++;
 				}
 				if(iplForeignPlayerCount==foreignCount) {
-					System.out.println("Number of Foreign Player: "+iplForeignPlayerCount);
+					System.out.println("Number of Foreign Player: "+foreignCount);
 					return true;
 				}else {
 					System.out.println("Number of Foreign Player is not matching and its: "+iplForeignPlayerCount);
@@ -56,19 +59,19 @@ public class IPLJsonServiceImpl implements IPLJsonService  {
 		}
 		return false;	
 	}
-
+	
 	public boolean checkWicketKeeperPlayers(int wicketKeeperCount) {
 		try
 		{
 			if(iplTeamObject!=null) {
 				JSONArray playerArr = (JSONArray) iplTeamObject.get("player");
 				for(int i=0;i<playerArr.size();i++) { 
-					JSONObject player=(JSONObject)playerArr.get(i);
-					String playersRole=(String)player.get("role");
-					if(playersRole.equals("Wicket-keeper")) iplWicketKeeperCount++;			
+					JSONObject iplPlayers=(JSONObject)playerArr.get(i);
+					String iplPlayersRole=(String)iplPlayers.get("role");
+					if(iplPlayersRole.equals("Wicket-keeper")) iplWicketKeeperCount++;			
 				}
 				if(iplWicketKeeperCount==wicketKeeperCount) {
-					System.out.println("Number of Wicket Keeper: "+iplWicketKeeperCount);
+					System.out.println("Number of Wicket Keeper: "+wicketKeeperCount);
 					return true;
 				}else {
 					System.out.println("Number of Wicket Keeper is not matching and its: "+iplWicketKeeperCount);
@@ -81,6 +84,7 @@ public class IPLJsonServiceImpl implements IPLJsonService  {
 		}
 		return false;
 	}		
-	
+		
+
 
 }

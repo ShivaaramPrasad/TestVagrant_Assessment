@@ -8,17 +8,23 @@ import org.testng.annotations.Test;
 
 import com.iplteam.IPLJsonServiceImpl;
 
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+
 public class ValidateRCBTeamWicketKeeper extends IPLJsonServiceImpl {
 	
 	@BeforeTest
-	public void preSetUp() {
-		readJsonFile("TeamRCB");
+	@Parameters("fileName")
+	public void preSetUp(@Optional("TeamRCB") String fileName) {
+		System.out.println("Read the Json File");
+		readJsonFile(fileName);
 	}
 	
 	@Test
 	@Parameters("wkCount")
-	public void testNoOfWicketKeeperInRCB(@Optional("1")int wkCount){
+	public void testNoOfWicketKeeperInATeam(@Optional("1")int wkCount){
+		System.out.println("Check Postive Testcase for Wicket Keeper");
 		Assert.assertTrue(checkWicketKeeperPlayers(wkCount));
 	}
-		
+	
 }

@@ -2,6 +2,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 	<test thread-count="5" name="RCBTestPositive" parallel="classes">
+		<parameter name="fileName" value="TeamRCB"></parameter>
 		<parameter name="fpCount" value="4"></parameter>
 		<parameter name="wkCount" value="1"></parameter>
 		<classes>
