@@ -6,8 +6,15 @@
 		<parameter name="fpCount" value="4"></parameter>
 		<parameter name="wkCount" value="1"></parameter>
 		<classes>
-			<class name="ipl.testcase.ValidateRCBTeamForeignPlayer" />
-			<class name="ipl.testcase.ValidateRCBTeamWicketKeeper" />
+			<class name="ipl.testcase.TC001" />
+			<class name="ipl.testcase.TC002" />
+		</classes>
+	</test> <!-- Test -->
+	<test thread-count="5" name="RCBTestNegative">
+		<parameter name="fpCount" value="10"></parameter>
+		<parameter name="wkCount" value="5"></parameter>
+		<classes>
+			<class name="ipl.testcase.TC003" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

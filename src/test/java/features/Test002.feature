@@ -1,4 +1,4 @@
-Feature: Check Forgin Players from RCB Team 
+Feature: Check Wicket Keeper from RCB Team 
    Background:
     Given Read the JSON file TeamRCB
    Scenario: TC002 Check how many wicket keeper from RCB Team 

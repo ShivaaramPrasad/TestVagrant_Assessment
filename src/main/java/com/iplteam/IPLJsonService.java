@@ -3,6 +3,8 @@ package com.iplteam;
 import java.net.MalformedURLException;
 import java.util.List;
 
+import javax.xml.parsers.ParserConfigurationException;
+
 
 public interface IPLJsonService {
 	
@@ -11,8 +13,9 @@ public interface IPLJsonService {
 	 * @param fileName - helps to load the team details`
 	 * @return type void 
 	 * @author Shivaaram
+	 * @throws ParserConfigurationException 
 	 */	
-	public void readJsonFile(String fileName);
+	public void readJsonFile(String fileName) throws ParserConfigurationException;
 	
 	/**
 	 * This method used to check how many foreign player in a team 

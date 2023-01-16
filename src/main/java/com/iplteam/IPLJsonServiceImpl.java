@@ -6,28 +6,32 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.xml.parsers.ParserConfigurationException;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import com.report.ExtentReport;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
-public class IPLJsonServiceImpl implements IPLJsonService  {
+public class IPLJsonServiceImpl extends ExtentReport  implements IPLJsonService {
 
 	public  JSONObject iplTeamObject;
 	protected int iplWicketKeeperCount;
 	protected int iplForeignPlayerCount;
 	
-	public void readJsonFile(String fileName) {
+	public void readJsonFile(String fileName) throws ParserConfigurationException {
 		try {
 			JSONParser jsonparser = new JSONParser();
 			FileReader fileReader = new FileReader("./src/test/resources/testdata/"+fileName+".json");
 			Object object = jsonparser.parse(fileReader);
 			iplTeamObject = (JSONObject) object;
 		} catch(ParseException e){
-			System.out.println("Unable to Parse : "+e);
+			throw new ParserConfigurationException("Unable to Parse : " +e);
 		} catch(IOException e){
 			System.out.println("File not found ! "+e);
 		} catch(Exception e){

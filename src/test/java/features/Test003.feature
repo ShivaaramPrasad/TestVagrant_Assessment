@@ -1,4 +1,4 @@
-Feature: Check Negative input for how may Check Forgin Players and wicket keeper from RCB Team 
+Feature: Check Negative input for how may forgin players and wicket keeper from RCB Team 
    Background:
     Given Read the JSON file TeamRCB
    Scenario: TC003 Check the Negative input for RCB Team 
