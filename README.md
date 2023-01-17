@@ -86,6 +86,7 @@
 <li>"Test002"Positive Test Case - To Validate there is at least 1 wicket keeper:</li>
 <li>"Test003"Negative Test Case - Check the Negative input for RCB Team :</li>
 <li>Report-->/target/cucumber-results-feature-overview.html</li>
+<li>In Console Report link will be generated -->https://reports.cucumber.io/reports/{id}</li>
 
 <h2>Command Line Execution</h2>
 <li>Navigate to project directory(./TestVagrant_Assessment) and execute "mvn clean test"</li>
