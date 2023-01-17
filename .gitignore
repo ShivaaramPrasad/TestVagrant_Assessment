@@ -11,4 +11,4 @@ release.properties
 */.DS_STORE
 /bin/
 /.idea/*
-reports/*
+/reports/*
