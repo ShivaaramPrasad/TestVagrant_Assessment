@@ -31,6 +31,7 @@ public class ExtentReport  {
 
 	@BeforeSuite(alwaysRun = true)
 	public synchronized void startReport() {
+		System.out.println("Executing testcases by TestNG driven approch ");
 		String date = new SimpleDateFormat(pattern).format(new Date());
 		folderName = "reports/" + date;
 
@@ -66,10 +67,10 @@ public class ExtentReport  {
 	}
 
 
-    /**
+	/**
      * Method to log the status
-     * @param status - Status enum
-     * @param log - log to be inserted
+     * @param desc - description of the report step
+     * @param status - log status of each step
      */
     // To report steps 
 
