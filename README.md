@@ -64,6 +64,9 @@
     <li>checkWicketKeeperPlayers(int wicketKeeperCount) - Checks how many Wicket Keeper from JSON Array</li>
 	</ul>
 	
+<h2>Brute Force Approach</h2>
+<li>Under src/main/java->"com.vanillascript" package-> has "ReadRCBJsonFile" class </li>
+<li>"ReadRCBJsonFile" class has step by step approach in reading the Json file and validating how many foreign players and wicketkeeper :</li>
 	
 <h2>TestNG Execution</h2>
 <li>Under src/test/java->"ipl.testcases" package-> has testcases based on testNG execution class</li>
