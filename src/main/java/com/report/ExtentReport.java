@@ -18,8 +18,7 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 public class ExtentReport  {
 	
 	private static ExtentReports extent;
-	public static ExtentTest svcTest, parent;
-	private static final ThreadLocal<ExtentTest> test = new ThreadLocal<ExtentTest>();
+	public static ExtentTest  parent;
 	private static final ThreadLocal<String> testName = new ThreadLocal<String>();
     /**
      * Method to create Extent Report
@@ -77,14 +76,14 @@ public class ExtentReport  {
     public static void reportLog(String desc, String status) {
     		
     		if(status.equalsIgnoreCase("PASS")) {
-    			svcTest.pass(desc);		
+    			parent.pass(desc);		
     		}else if(status.equalsIgnoreCase("FAIL")) {
-    			svcTest.fail(desc);
+    			parent.fail(desc);
     			throw new RuntimeException();
     		}else if(status.equalsIgnoreCase("WARNING")) {
-    			svcTest.warning(desc);		
+    			parent.warning(desc);		
     		}else {
-    			svcTest.info(desc);
+    			parent.info(desc);
     		}	
     	}
 

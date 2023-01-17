@@ -89,6 +89,4 @@ public class IPLJsonServiceImpl extends ExtentReport  implements IPLJsonService 
 		return false;
 	}		
 		
-
-
 }

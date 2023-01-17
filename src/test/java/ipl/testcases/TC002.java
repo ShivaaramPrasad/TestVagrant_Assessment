@@ -29,6 +29,7 @@ public class TC002 extends IPLJsonServiceImpl {
 	@Test
 	@Parameters("fileName")
 	public void preSetUp(@Optional("TeamRCB") String fileName) throws ParserConfigurationException {
+		System.out.println(testcaseName+ " "+ testDescription);
 		System.out.println("Read the Json File "+fileName+"");
 		readJsonFile(fileName);
 		reportLog("Read the given json file "+fileName+"","PASS");

@@ -20,8 +20,6 @@ public class RunCucumberTest extends AbstractTestNGCucumberTests {
 		results.setOutputName("cucumber-results");
 		results.setSourceFile("./src/test/resources/cucumber.json");
 		results.executeFeaturesOverviewReport();	
-
 	}
-
-
+	
 }
