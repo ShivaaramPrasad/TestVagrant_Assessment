@@ -3,7 +3,7 @@
 <h2>Problem Statement:</h2>
 <ul>
 <li>1. Write test to validate that the team has only 4 foreign players</li>
-<li>2. Write test to validate that their is atleast one wicket keeper </li>
+<li>2. Write test to validate that their is atleast 1 wicket keeper </li>
  
 ## Software Dependencies
 
