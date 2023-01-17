@@ -31,7 +31,7 @@ public class TC002 extends IPLJsonServiceImpl {
 	public void preSetUp(@Optional("TeamRCB") String fileName) throws ParserConfigurationException {
 		System.out.println("Read the Json File "+fileName+"");
 		readJsonFile(fileName);
-		//log(Status.INFO, "Read the given json file "+fileName+"");
+		reportLog("Read the given json file "+fileName+"","PASS");
 
 	}
 	
@@ -40,7 +40,7 @@ public class TC002 extends IPLJsonServiceImpl {
 	public void testNoOfWicketKeeperInATeam(@Optional("1")int wkCount){
 		System.out.println("Check Postive Testcase for Wicket Keeper");
 		Assert.assertTrue(checkWicketKeeperPlayers(wkCount));
-		//log(Status.INFO, "Validate there is at least "+wkCount+" wicket keeper");
+		reportLog("Validate there is at least "+wkCount+" wicket keeper","PASS");
 
 	}
 	

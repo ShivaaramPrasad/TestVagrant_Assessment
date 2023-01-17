@@ -16,7 +16,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
 public class TC001 extends IPLJsonServiceImpl {
-	
+
 	@BeforeTest
 	void setReportDetails() {
 		testcaseName = "TC001";
@@ -24,22 +24,22 @@ public class TC001 extends IPLJsonServiceImpl {
 		authors = "Shivaaram";
 		category = "Postive";
 	}
-	
+
 	@Test
 	@Parameters("fileName")
 	public void preSetUp(@Optional("TeamRCB") String fileName) throws ParserConfigurationException {
 		System.out.println("Read the Json File "+fileName+"");
 		readJsonFile(fileName);
-	//	log(Status.INFO, "Read the given json file "+fileName+"");
+		reportLog("Read the given json file "+fileName+"","PASS");
 	}
-	
+
 	@Test(dependsOnMethods = "preSetUp")
 	@Parameters("fpCount")
 	public void testNoOfForeignPlayersInATeam(@Optional("4")int fpCount){
 		System.out.println("Check Postive Testcase for Foreign Players");
 		Assert.assertTrue(checkForeignPlayers(fpCount));	
-		//log(Status.INFO, "Validate the team has only "+fpCount+" foreign players");
+		reportLog("Validate the team has only "+fpCount+" foreign players","PASS");
 
 	}
-		
+
 }

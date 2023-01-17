@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityModelProvider;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
@@ -17,6 +18,7 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 public class ExtentReport  {
 	
 	private static ExtentReports extent;
+	public static ExtentTest svcTest, parent;
 	private static final ThreadLocal<ExtentTest> test = new ThreadLocal<ExtentTest>();
 	private static final ThreadLocal<String> testName = new ThreadLocal<String>();
     /**
@@ -58,7 +60,7 @@ public class ExtentReport  {
      */
 	@BeforeClass(alwaysRun = true)
 	public synchronized void startTestCase() {
-		ExtentTest parent = extent.createTest(testcaseName, testDescription);
+		parent = extent.createTest(testcaseName, testDescription);
 		parent.assignCategory(category);
 		parent.assignAuthor(authors);
 		testName.set(testcaseName);
@@ -70,20 +72,21 @@ public class ExtentReport  {
      * @param status - Status enum
      * @param log - log to be inserted
      */
-    public static void log(Status status, String log){
-        switch (status){
-            case INFO:
-            	test.get().log(Status.INFO, log);
-                break;
-            case PASS:
-            	test.get().log(Status.PASS, log);
-                break;
-            case FAIL:
-            	test.get().log(Status.FAIL, log);
-                break;
-        }
-    }
-    
+    // To report steps 
+
+    public static void reportLog(String desc, String status) {
+    		
+    		if(status.equalsIgnoreCase("PASS")) {
+    			svcTest.pass(desc);		
+    		}else if(status.equalsIgnoreCase("FAIL")) {
+    			svcTest.fail(desc);
+    			throw new RuntimeException();
+    		}else if(status.equalsIgnoreCase("WARNING")) {
+    			svcTest.warning(desc);		
+    		}else {
+    			svcTest.info(desc);
+    		}	
+    	}
 
     @AfterSuite(alwaysRun = true)
 	public synchronized void endResult() {

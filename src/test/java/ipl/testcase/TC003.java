@@ -29,7 +29,7 @@ public class TC003 extends IPLJsonServiceImpl {
 	public void preSetUp(@Optional("TeamRCB") String fileName) throws ParserConfigurationException {
 		System.out.println("Read the Json File "+fileName+"");
 		readJsonFile(fileName);
-		//log(Status.INFO, "Read the given json file "+fileName+"");
+		reportLog("Read the given json file "+fileName+"","PASS");
 
 	}
 	
@@ -38,7 +38,7 @@ public class TC003 extends IPLJsonServiceImpl {
 	public void testNoOfForeignPlayersInATeam(@Optional("3")int fpCount){
 		System.out.println("Check Negative Testcase for Foreign Players");
 		Assert.assertFalse(checkForeignPlayers(fpCount));	
-		//log(Status.INFO, "Validate the team has only "+fpCount+" foreign players");
+		reportLog("Validate the team has only "+fpCount+" foreign players","PASS");
 
 	}
 	
@@ -47,7 +47,7 @@ public class TC003 extends IPLJsonServiceImpl {
 	public void testNoOfWicketKeeperInATeam(@Optional("2")int wkCount){
 		System.out.println("Check Negative Testcase for Wicket Keeper");
 		Assert.assertFalse(checkWicketKeeperPlayers(wkCount));
-		//log(Status.INFO, "Validate there is at least "+wkCount+" wicket keeper");
+		reportLog("Validate there is at least "+wkCount+" wicket keeper","PASS");
 
 	}
 	
