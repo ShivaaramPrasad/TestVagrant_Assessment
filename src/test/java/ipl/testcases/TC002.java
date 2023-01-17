@@ -33,7 +33,6 @@ public class TC002 extends IPLJsonServiceImpl {
 		System.out.println("Read the Json File "+fileName+"");
 		readJsonFile(fileName);
 		reportLog("Read the given json file "+fileName+"","PASS");
-
 	}
 	
 	@Test(dependsOnMethods = "preSetUp")
