@@ -36,19 +36,16 @@
       <td><b>3.1.5</b></td>
       <td><b>To create feature file</b></td>
     </tr>
-    
     <tr>
       <td><b>Cucumber TestNG</b></td>
       <td><b>3.1.5</b></td>
       <td><b>Cucumber TestNG Runner to execute cucumber features</b></td>
-    </tr>
-    
+    </tr> 
     <tr>
       <td><b>Extent Reports</b></td>
       <td><b>3.1.5</b></td>
       <td><b>The HTML reporting library</b></td>
     </tr>
-    
   </tbody>
 </table>
 
