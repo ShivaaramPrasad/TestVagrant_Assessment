@@ -1,4 +1,4 @@
-package com.runner;
+package com.cucumberrunner;
 
 import org.testng.annotations.AfterSuite;
 

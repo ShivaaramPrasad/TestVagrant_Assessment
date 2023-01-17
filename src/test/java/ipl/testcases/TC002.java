@@ -1,4 +1,4 @@
-package ipl.testcase;
+package ipl.testcases;
 
 import javax.xml.parsers.ParserConfigurationException;
 
@@ -41,7 +41,6 @@ public class TC002 extends IPLJsonServiceImpl {
 		System.out.println("Check Postive Testcase for Wicket Keeper");
 		Assert.assertTrue(checkWicketKeeperPlayers(wkCount));
 		reportLog("Validate there is at least "+wkCount+" wicket keeper","PASS");
-
 	}
 	
 }
