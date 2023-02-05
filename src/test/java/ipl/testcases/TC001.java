@@ -22,7 +22,7 @@ public class TC001 extends IPLJsonServiceImpl {
 		testcaseName = "TC001";
 		testDescription = "Validate the team has only 4 foreign players";
 		authors = "Shivaaram";
-		category = "Postive";
+		category = "Positive";
 	}
 
 	@Test

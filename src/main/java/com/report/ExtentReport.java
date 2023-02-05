@@ -31,7 +31,7 @@ public class ExtentReport  {
 
 	@BeforeSuite(alwaysRun = true)
 	public synchronized void startReport() {
-		System.out.println("Executing testcases by TestNG driven approch ");
+		System.out.println("Executing testcases by TestNG driven approach ");
 		String date = new SimpleDateFormat(pattern).format(new Date());
 		folderName = "reports/" + date;
 

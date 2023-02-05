@@ -22,7 +22,7 @@ public class TC002 extends IPLJsonServiceImpl {
 		testcaseName = "TC002";
 		testDescription = "Validate there is at least 1 wicket keeper";
 		authors = "Shivaaram";
-		category = "Postive";
+		category = "Positive";
 	}
 	
 	
