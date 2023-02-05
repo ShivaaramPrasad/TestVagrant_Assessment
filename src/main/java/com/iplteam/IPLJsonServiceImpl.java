@@ -3,8 +3,7 @@ package com.iplteam;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
+
 
 import javax.xml.parsers.ParserConfigurationException;
 
@@ -15,8 +14,6 @@ import org.json.simple.parser.ParseException;
 
 import com.report.ExtentReport;
 
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 
 public class IPLJsonServiceImpl extends ExtentReport  implements IPLJsonService {
 

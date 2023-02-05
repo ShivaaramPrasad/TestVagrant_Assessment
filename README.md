@@ -73,7 +73,7 @@
 <li>"TC001"Positive Test Case - To Validate the team has only 4 foreign players:</li>
 <li>"TC002"Positive Test Case - To Validate there is at least 1 wicket keeper:</li>
 <li>"TC003"Negative Test Case - Check the Negative input for RCB Team :</li>
-<li>testng.xml --> contains parameter will  pass the foreignplayer  and wicketkeeper method to check count</li>
+<li>testng.xml --> contains parameter will  pass the foreignplayer  and wicket keeper method to check count</li>
 <li>Report-->/test-output/emailable-report.html</li>
 
 

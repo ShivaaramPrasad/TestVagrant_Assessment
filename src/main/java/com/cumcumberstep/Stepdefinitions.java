@@ -16,7 +16,7 @@ import io.cucumber.java.en.Then;
 public class StepDefinitions extends IPLJsonServiceImpl {
 	
 	@Given("Read the JSON file (.*)$")
-	public void preSetUp(String fileName) throws ParserConfigurationException {
+	public void preSetUp(String fileName) throws ParserConfigurationException {		
 		readJsonFile(fileName);
 	}
 	
